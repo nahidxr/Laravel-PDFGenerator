@@ -28,7 +28,7 @@ class CustomerController extends Controller
             'email' => $request->input('email'),
         ]);
 
-        storage::put('public/storage/uploads/' . '-' . rand() . '_' . time() . '.' . 'pdf', $pdf->output());
+        //storage::put('public/storage/uploads/' . '-' . rand() . '_' . time() . '.' . 'pdf', $pdf->output());
 
         if ($customer->save()) {
             Customer::sendCustomerEmail($customer, $pdf);

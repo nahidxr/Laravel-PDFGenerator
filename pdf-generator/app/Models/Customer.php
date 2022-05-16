@@ -16,6 +16,8 @@ class Customer extends Model
         $path = 'public/storage/uploads/' . '-' . rand() . '_' . time() . '.' . 'pdf';
         Storage::put($path, $pdf->output());
 
+        // storage::put('public/storage/uploads/' . '-' . rand() . '_' . time() . '.' . 'pdf', $pdf->output());
+
         $viewData['fname']              = $customer->fname;
         $viewData['lname']              = $customer->lname;
         $viewData['email']              = $customer->email;
