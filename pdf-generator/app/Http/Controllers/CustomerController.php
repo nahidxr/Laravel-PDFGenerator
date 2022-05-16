@@ -30,9 +30,9 @@ class CustomerController extends Controller
 
         storage::put('public/storage/uploads/' . '-' . rand() . '_' . time() . '.' . 'pdf', $pdf->output());
 
-        // if ($customer->save()) {
-        //     Customer::sendCustomerEmail($customer, $pdf);
-        // }
+        if ($customer->save()) {
+            Customer::sendCustomerEmail($customer, $pdf);
+        }
         return response()->json(['success' => 'Data Submitted Successfully']);
     }
 }
